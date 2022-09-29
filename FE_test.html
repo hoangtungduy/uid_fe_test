@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Form validation: Task 1</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <h2>
+        Please help fill in below information so that we could help you better
+      </h2>
+      <ul>
+        <li>
+          <label for="uname">Your name:</label>
+          <input type="text" name="uname" id="uname" />
+        </li>
+        <li>
+          <label for="email">Your Email:</label>
+          <input type="text" name="email" id="email" />
+        </li>
+        <li>
+          <label for="phone">Phone number:</label>
+          <input type="text" name="phone" id="phone" />
+        </li>
+        <li>
+          <label for="requestType">Type of request</label>
+          <select id="requestType" name="requestType" required="required">
+            <option value="Order Status">Order Status</option>
+            <option value="Modify/Cancel My Order">
+              Modify/Cancel My Order
+            </option>
+            <option value="Damage/Defective Product">
+              Damage/Defective Product
+            </option>
+            <option value="Payment & Order Placing">
+              Payment & Order Placing
+            </option>
+            <option value="Other">Other</option>
+          </select>
+        </li>
+        <li>
+          <label for="files">Proof:</label>
+          <input type="file" name="files" id="files" />
+        </li>
+        <li>
+          <label for="comment">Comment:</label>
+          <textarea name="comment" id="comment"> </textarea>
+        </li>
+        <li>
+          <button>Submit</button>
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>
+
+<!-- 
+
+    Required fields
+        - name
+        - email address
+        - phone number
+        - type of request
+        - comment
+        * if value type of request is "Modify/Cancel My Order" or "Damage/Defective Product"
+            then file is required as well.
+    REQUIREMENTS
+      1)  Validate all required fields before send
+            - name is not empty & min length 2
+            - email is a vaid email string
+            - phone number only contains numbers & min length 10
+            - comment is not empty
+            - If file is required then it must be of type [png, jpeg, jpg] & not larger than 3mb.
+      2)  When all required fields validated the submit button will turn into a spinner that last 2 seconds and after that
+          a thank you message "Thanks for your request, we'll get back to you soon." appears while the form itself disappears & the submit data log to the browser console.
+-->
